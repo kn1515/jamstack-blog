@@ -37,6 +37,21 @@ interface BlogListResponse {
 
 type TagListResponse = Tag[];
 
+// Wiki記事の型
+interface WikiPost extends BaseContent {
+  title: string;
+  body: string;
+  tags: Tag[];
+}
+
+// Wikiページネーション情報を含むレスポンスの型
+interface WikiListResponse {
+  contents: WikiPost[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+}
+
 export type {
   BaseContent,
   Thumbnail,
@@ -44,4 +59,6 @@ export type {
   BlogPost,
   BlogListResponse,
   TagListResponse,
+  WikiPost,
+  WikiListResponse,
 };

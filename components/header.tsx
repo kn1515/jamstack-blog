@@ -8,6 +8,14 @@ const Header = () => {
           <Link href="/" className="text-2xl font-bold text-gray-900">
             handle.com
           </Link>
+          <nav className="flex items-center gap-6">
+            <Link
+              href="/wiki"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Wiki
+            </Link>
+          </nav>
         </div>
       </div>
     </header>

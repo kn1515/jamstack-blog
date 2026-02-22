@@ -1,5 +1,5 @@
 import { client } from "./client";
-import { BlogPost } from "./types";
+import { BlogPost, WikiPost } from "./types";
 
 // microCMSからブログ記事を取得
 async function getBlogPosts(): Promise<BlogPost[]> {
@@ -20,4 +20,23 @@ async function getBlogPostById(id: string): Promise<BlogPost> {
   return data;
 }
 
-export { getBlogPosts, getBlogPostById };
+// microCMSからWiki記事を取得
+async function getWikiPosts(): Promise<WikiPost[]> {
+  const data = await client.get({
+    endpoint: "wiki",
+    queries: {
+      limit: 100,
+    },
+  });
+  return data.contents;
+}
+
+// microCMSから特定のWiki記事を取得
+async function getWikiPostById(id: string): Promise<WikiPost> {
+  const data = await client.get({
+    endpoint: `wiki/${id}`,
+  });
+  return data;
+}
+
+export { getBlogPosts, getBlogPostById, getWikiPosts, getWikiPostById };

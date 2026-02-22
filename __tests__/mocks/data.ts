@@ -1,4 +1,4 @@
-import { BlogPost } from "@/lib/microcms/types";
+import { BlogPost, WikiPost } from "@/lib/microcms/types";
 
 export const mockPosts: BlogPost[] = [
   {
@@ -30,5 +30,37 @@ export const mockPosts: BlogPost[] = [
     updatedAt: "2024-06-06T00:00:00.000Z",
     publishedAt: "2024-06-06T00:00:00.000Z",
     revisedAt: "2024-06-06T00:00:00.000Z",
+  },
+];
+
+export const mockWikiPosts: WikiPost[] = [
+  {
+    id: "jamstack",
+    title: "JAMstack",
+    body: '<h2 id="h1">JAMstackとは</h2><p>JAMstackは、JavaScript・API・Markupの略です。</p>',
+    tags: [
+      {
+        id: "tag1",
+        name: "Web開発",
+        createdAt: "2024-01-01T00:00:00.000Z",
+        updatedAt: "2024-01-01T00:00:00.000Z",
+        publishedAt: "2024-01-01T00:00:00.000Z",
+        revisedAt: "2024-01-01T00:00:00.000Z",
+      },
+    ],
+    createdAt: "2024-07-01T00:00:00.000Z",
+    updatedAt: "2024-07-01T00:00:00.000Z",
+    publishedAt: "2024-07-01T00:00:00.000Z",
+    revisedAt: "2024-07-01T00:00:00.000Z",
+  },
+  {
+    id: "nextjs",
+    title: "Next.js",
+    body: "<p>Next.jsはReactベースのフレームワークです。</p>",
+    tags: [],
+    createdAt: "2024-07-02T00:00:00.000Z",
+    updatedAt: "2024-07-02T00:00:00.000Z",
+    publishedAt: "2024-07-02T00:00:00.000Z",
+    revisedAt: "2024-07-02T00:00:00.000Z",
   },
 ];
